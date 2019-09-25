@@ -13,11 +13,15 @@ class IndexLogin extends LitElement {
             <div class="stars2"></div>
             <div class="stars3"></div>
             <div class="center">
-                <div class="firstContainer">
-                  <img src="/src/svgs/security.svg" alt="Security person">
+                <div class="first_container">
+                  <img src="/src/imgs/security.png" alt="Security person">
                 </div>
-                <div class="secondContainer">
-
+                <div class="second_container">
+                    <label for="username">Usuario</label>
+                    <input type="email" name="username" />
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" />
+                    <button type="submit">Entrar</button>
                 </div>
             </div>
           </div>
