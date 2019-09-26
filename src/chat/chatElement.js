@@ -1,11 +1,21 @@
-// import { LitElement, html, property } from '@polymer/lit-element'
-import { html, LitElement } from 'lit-element';
+// import { LitElement, html, property, css } from '@polymer/lit-element'
+import { html, LitElement, css } from 'lit-element';
 import css_chat from './chat.scss';
 import msgList from './chatData';
 
 class ChatElement extends LitElement {
   static get styles() {
-    return css_chat;
+    return [
+      css_chat,
+      css`
+        :host {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+      `
+    ];
   }
 
   render() {
@@ -36,7 +46,7 @@ class ChatElement extends LitElement {
   }
 
   firstUpdated() {
-    console.log(msgList.messages);
+    // console.log(msgList.messages);
   }
 
   printMessages() {

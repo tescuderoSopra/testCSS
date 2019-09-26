@@ -2,6 +2,7 @@
   background-color: #F5F9FF;
   width: 100vw;
   height: 100vh;
+  position: relative;
 
   .date-info {
     background-color: #FFD3C7;
@@ -47,7 +48,7 @@
         border-radius: 15px 0 15px 15px;
         max-width: 250px;
         color: #fff;
-        font-size: 14px;
+        font-size: 12px;
         box-shadow: 0 0 70px rgba(0, 0, 0, 0.055);
       }
       
@@ -57,7 +58,7 @@
         border-radius: 0 15px 15px 15px;
         max-width: 250px;
         color: #1F2135;
-        font-size: 14px;
+        font-size: 12px;
         box-shadow: 0 0 70px rgba(0, 0, 0, 0.055);
         align-self: flex-start;
       }
@@ -81,6 +82,7 @@
 
     input {
       font-size: 18px;
+      border: none;
     }
 
     ::placeholder {
@@ -121,6 +123,19 @@
         width: 25px;
         margin-left: 3px;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    width: 330px;
+    height: 650px;
+    box-shadow: 0 0 70px rgba(31, 33, 53, 0.151);
+    border-radius: 8px;
+
+    .message-sender {
+      border-radius: 0 0 8px 8px;
     }
   }
 }
