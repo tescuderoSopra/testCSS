@@ -31,13 +31,18 @@ class ChatElement extends LitElement {
               <div></div>
             </div>
             <div class="message-sender">
-              <input type="text" placeholder="Escribe el mensaje...">
+              <div class="input-box">
+                <button>
+                  <img src="/src/svgs/smiley-face.svg" alt="Smiley face">
+                </button>
+                <input type="text" placeholder="Escribe el mensaje...">
+              </div>
               <div class="chat-buttons">
                 <button>
                   <img src="/src/svgs/microphone.svg" alt="Microphone">
                 </button>
                 <button>
-                  <img src="/src/svgs/send.svg" alt="Microphone">
+                  <img src="/src/svgs/send.svg" alt="Send message">
                 </button>
               </div>
             </div>
