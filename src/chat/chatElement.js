@@ -11,6 +11,9 @@ class ChatElement extends LitElement {
   render() {
     return html`
           <div class="container">
+            <div class="date-info">
+              <p>Hoy</p>
+            </div>
             <div class="messages-container">
               <div class="messages-lines">
                 ${this.printMessages()}
