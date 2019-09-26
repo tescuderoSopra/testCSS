@@ -22,6 +22,22 @@ class ComponentCalendar extends LitElement {
                 white-space: nowrap;
                 height: 80px;
             }
+            .container .shadowLeft,.container .shadowRight  { 
+
+                position: absolute;
+                width: 1px;
+                display: block;
+                height: 50px;
+                box-shadow: 0 0 10px;
+            }
+            .container .shadowLeft {
+                left: -1px;
+                
+            }
+            .container .shadowRight {
+                right: -1px;
+                
+            }
         `;
     }
 
@@ -60,7 +76,9 @@ class ComponentCalendar extends LitElement {
     render() {
         return html`
           <div class="container">
+            <div class="shadowLeft"></div>
             ${this.days.map((day, index) => this._renderItems(day, index))}
+            <div class="shadowRight"></div>
           </div>
         `
     }
