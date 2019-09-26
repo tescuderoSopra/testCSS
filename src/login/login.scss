@@ -65,16 +65,14 @@
     padding: 5px 8px;
     font-size: 18px;
     color: #3E4A59;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
     transition: all 0.5s ease;
   }
   
   .username-container input:focus, .password-container input:focus {
     height: 30px;
-  }
-
-  input {
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+    border-bottom: 3px solid #5D74E2;
   }
 
   .forgotten-pass {
