@@ -45,6 +45,7 @@
     font-size: 24px;
     font-weight: bold;
     margin: 0;
+    color: #3E4A59;
   }
 
   label {
@@ -57,6 +58,18 @@
     flex-direction: column;
     justify-content: flex-end;
     height: 55px;
+  }
+
+  .username-container input, .password-container input {
+    height: 10px;
+    padding: 5px 8px;
+    font-size: 18px;
+    color: #3E4A59;
+    transition: all 0.5s ease;
+  }
+  
+  .username-container input:focus, .password-container input:focus {
+    height: 30px;
   }
 
   input {
