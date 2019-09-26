@@ -36,6 +36,16 @@ class IndexLogin extends LitElement {
             <button type="submit">ENTRAR</button>
           </div>
         </div>
+        <div class="social-login">
+          <p>Social Login</p>
+          <div class="social-links">
+            <img src="/src/svgs/fb.svg" alt="Facebook">
+            <img src="/src/svgs/ggl.svg" alt="Google">
+            <img src="/src/svgs/twtr.svg" alt="Twitter">
+            <img src="/src/svgs/lnkin.svg" alt="LinkedIn">
+          </div>
+          <p>Nuevo usuario? <span>Signup</span></p>
+        </div>
         <img class="bottom-background" src="/src/svgs/city.svg" alt="City">
       </div>
         `;
