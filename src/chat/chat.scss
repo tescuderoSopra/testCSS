@@ -2,4 +2,103 @@
   background-color: #fff;
   width: 100vw;
   height: 100vh;
+
+  .messages-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F5F9FF;
+    padding: 10px 10px 60px 10px;
+    box-sizing: border-box;
+
+    .messages-lines {
+      height: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+
+      .me {
+        background-color: #FA6C45;
+        padding: 10px 20px;
+        border-radius: 15px 0 15px 15px;
+        max-width: 250px;
+        color: #fff;
+        font-size: 14px;
+        box-shadow: 0 0 70px rgba(0, 0, 0, 0.055);
+      }
+      
+      .away {
+        background-color: #fff;
+        padding: 10px 20px;
+        border-radius: 0 15px 15px 15px;
+        max-width: 250px;
+        color: #1F2135;
+        font-size: 14px;
+        box-shadow: 0 0 70px rgba(0, 0, 0, 0.055);
+        align-self: flex-start;
+      }
+    }
+
+  }
+
+  .message-sender {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 -11px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+
+    input {
+      font-size: 18px;
+    }
+
+    ::placeholder {
+      font-size: 16px;
+      color: #C1C1C1;
+      padding-left: 10px;
+    }
+
+    .chat-buttons {
+      display: flex;
+
+      button {
+        border-radius: 50px;
+        border: none;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5px;
+        
+        img {
+          width: 20px;
+        }
+      }
+      
+      button:first-child {
+        background-color: rgb(0, 199, 199);
+        box-shadow: 0 3px 7px rgba(0, 199, 199, 0.705);
+      }
+      
+      button:last-child {
+        background-color: #FF5858;
+        box-shadow: 0 3px 7px rgba(255, 88, 88, 0.705);
+      }
+      
+      button:last-child img {
+        width: 25px;
+        margin-left: 3px;
+      }
+    }
+  }
 }
