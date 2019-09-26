@@ -1,6 +1,6 @@
 // import { LitElement, html, property } from '@polymer/lit-element'
 import { html, LitElement, css } from 'lit-element';
-import { getDaysOfMonth } from './aux';
+import { getDaysOfMonth, getCurrentDay } from './aux';
 import './calendar-item';
 
 class ComponentCalendar extends LitElement {
@@ -8,7 +8,8 @@ class ComponentCalendar extends LitElement {
         super();
         this.days = getDaysOfMonth();
         this.today = new Date();
-        
+
+        this.currentDay = getCurrentDay();
     }
 
     static get styles() {
@@ -24,29 +25,42 @@ class ComponentCalendar extends LitElement {
         `;
     }
 
-    _selectItem({ detail }) {
-        // console.log('detaaaiiil', detail, detail.event, this.shadowRoot.querySelector('.container').scrollLeft, detail.width);
-        console.log('detail', detail);
-        const scrollLeft = this.shadowRoot.querySelector('.container').scrollLeft;
-        const widthContainer =  this.shadowRoot.querySelector('.container').clientWidth;
+    _moveItem({ detail }) {
+        const widthContainer = this.shadowRoot.querySelector('.container').clientWidth;
         const widthItem = detail.width;
-        const middleContainer = widthContainer / 2;
         const positionYItem = detail.positionY;
         const offset = positionYItem - ((widthContainer - widthItem) / 2);
-      
-        console.log({ scrollLeft, middleContainer, offset, width: detail.width, positionYItem, scroll });
         this.shadowRoot.querySelector('.container').scrollLeft = offset;
     }
 
-    _renderItems() {
-        return html`${this.days.map(day =>
-            html`<calendar-item @selectItem=${this._selectItem} .day=${day}></calendar-item>`)}`;
+    _lastItemRender() {
+        const index = this.days.findIndex(day => day.number === this.currentDay);
+        this.days[index] = {
+            ...this.days[index],
+            current: true,
+        }
+        this.requestUpdate();
+    }
+
+    _renderItems(day, index) {
+        return html`<calendar-item
+                @moveItem=${this._moveItem}
+                @lastItemRender=${this._lastItemRender}
+                number=${day.number}
+                month=${day.month}
+                year=${day.year}
+                nameOfDay=${day.nameOfDay}
+                current=${day.current || false}
+                isLastItem=${(index + 1) === this.currentDay}
+                active=${day.active || false}
+            >
+            </calendar-item>`;
     }
 
     render() {
         return html`
           <div class="container">
-            ${this._renderItems()}
+            ${this.days.map((day, index) => this._renderItems(day, index))}
           </div>
         `
     }

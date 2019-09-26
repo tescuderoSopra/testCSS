@@ -11,7 +11,6 @@ export const dayOfWeekAsString = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat
 
 
 export const getDaysOfMonth = (date = new Date()) => {
-    
     const numOfDays = getNumDaysOfMonth(date);
     const year = date.getFullYear();
     const days = [];
@@ -19,14 +18,18 @@ export const getDaysOfMonth = (date = new Date()) => {
         const month = months[date.getMonth()];
         const day = new Date(year, date.getMonth(), i + 1);
         const nameOfDay = dayOfWeekAsString[day.getDay()];
-        console.log(date.getDate(), i), i + 1 === date.getDate();
         days.push({
             month,
             year,
             nameOfDay,
             number: i + 1,
-            current: i + 1 === date.getDate()
         });
     }
     return days;
+}
+
+export const getCurrentDay = () => {
+    const date = new Date();
+    return date.getDate();
+
 }
