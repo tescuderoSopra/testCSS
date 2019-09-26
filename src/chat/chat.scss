@@ -1,5 +1,5 @@
 .container {
-  background-color: #fff;
+  background-color: #F5F9FF;
   width: 100vw;
   height: 100vh;
 
@@ -9,7 +9,11 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #F5F9FF;
+    background-image: url('/src/svgs/chat-background.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 20%;
     padding: 10px 10px 60px 10px;
     box-sizing: border-box;
 

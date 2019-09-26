@@ -14,7 +14,11 @@
     },
     {
       "userId": 2,
-      "text": "What are you majoring in?"
+      "text": "Hello! What are you majoring in?"
+    },
+    {
+      "userId": 1,
+      "text": "Hi !!!"
     }
   ]
 }
