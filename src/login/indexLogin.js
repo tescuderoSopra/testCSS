@@ -8,24 +8,47 @@ class IndexLogin extends LitElement {
   }
   render() {
     return html`
-          <div class="container">
-            <div class="stars"></div>
-            <div class="stars2"></div>
-            <div class="stars3"></div>
-            <div class="center">
-                <div class="first_container">
-                  <img src="/src/imgs/security.png" alt="Security person">
-                </div>
-                <div class="second_container">
-                    <label for="username">Usuario</label>
-                    <input type="email" name="username" />
-                    <label for="password">Contraseña</label>
-                    <input type="password" name="password" />
-                    <button type="submit">Entrar</button>
-                </div>
-            </div>
+      <div class="login-container">
+        <div class="app-logo">
+          <div>
+            <img src="/src/svgs/logo.svg" alt="Logo">
+            <p>TeAGILE</p>
           </div>
-        `
+          <img src="/src/svgs/people-running.svg" width="300px" alt="People running">
+        </div>
+        <div class="inputs-box">
+          <h1>Login</h1>
+          <div class="username-container">
+            <label for="username">Usuario</label>
+            <input type="email" name="username" />
+          </div>
+          <div class="password-container">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" />
+          </div>
+          <p class="forgotten-pass">Olvidaste tu contraseña?</p>
+          <div class="send-login">
+            <div class="remeber-user">
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox"></label>
+              <p>Recuérdame</p>
+            </div>
+            <button type="submit">ENTRAR</button>
+          </div>
+        </div>
+        <div class="social-login">
+          <p>Social Login</p>
+          <div class="social-links">
+            <img src="/src/svgs/fb.svg" alt="Facebook">
+            <img src="/src/svgs/ggl.svg" alt="Google">
+            <img src="/src/svgs/twtr.svg" alt="Twitter">
+            <img src="/src/svgs/lnkin.svg" alt="LinkedIn">
+          </div>
+          <p>Nuevo usuario? <span>Signup</span></p>
+        </div>
+        <img class="bottom-background" src="/src/svgs/city.svg" alt="City">
+      </div>
+        `;
   }
 }
 
