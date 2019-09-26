@@ -14,6 +14,25 @@ class ChatElement extends LitElement {
           align-items: center;
           height: 100vh;
         }
+
+        @keyframes robot {
+          0% {
+            transform: rotate(0deg);
+            left: 0;
+          }
+          20% {
+            transform: rotate(-45deg);
+            left: -100px;
+          }
+          80% {
+            transform: rotate(-45deg);
+            left: -100px;
+          }
+          100% {
+            transform: rotate(0deg);
+            left: 0;
+          }
+        }
       `
     ];
   }
@@ -45,6 +64,10 @@ class ChatElement extends LitElement {
                   <img src="/src/svgs/send.svg" alt="Send message">
                 </button>
               </div>
+            </div>
+
+            <div id="robot">
+              <img src="/src/imgs/robot.png" alt="Robot">
             </div>
           </div>
         `;
