@@ -10,18 +10,10 @@
   right: 0;
 }
 
-.app-logo div {
+.app-logo img:first-child {
   position: absolute;
-  top: 90px;
-  left: 40px;
-  display: flex;
-  align-items: center;
-
-  p {
-    font-size: 24px;
-    color: #3E4A59;
-    margin: 0 10px;
-  }
+  top: 30px;
+  left: 20px;
 }
 
 .inputs-box {
@@ -187,6 +179,7 @@ button {
     margin: -38px 0 10px 0;
     padding: 6px;
     background-color: #fff;
+    border-radius: 20px;
   }
 
   .social-links img {
@@ -204,10 +197,18 @@ button {
 }
 
 @media screen and (min-width: 700px) {
+  .app-logo img:first-child {
+    width: 300px;
+    top: 2%;
+    left: 60%;
+    z-index: 2000;
+  }
+
   .inputs-box {
     width: 600px;
     height: 400px;
     padding: 100px;
+    top: 40%;
   }
 
   .app-logo img:last-child {
@@ -246,8 +247,6 @@ button {
   }
 
   .social-login {
-    bottom: 10px;
-    right: 20px;
-    transform: none;
+    bottom: -10px;
   }
 }
