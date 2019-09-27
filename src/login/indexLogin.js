@@ -3,9 +3,28 @@ import { html, LitElement } from 'lit-element';
 import css_login from './login.scss';
 
 class IndexLogin extends LitElement {
+
+  static get properties() {
+    return {
+      loading: Boolean,
+    }
+  }
   static get styles() {
     return css_login;
   }
+
+  signin() {
+    this.loading = true;
+    const email = this.shadowRoot.querySelector('input[name=email]').value;
+    const password = this.shadowRoot.querySelector('input[name=password]').value;
+    const base64Password = btoa(password);
+     // fetch('url', (result) => {
+    //   if(result.status === 200) {
+    //     sessionStorage.setItem('user', `Basic ${base64.encode(`${email}:${password}`)}`);
+    //     window.location.href = '/';
+    //   }
+  }
+
   render() {
     return html`
       <div class="login-container">
@@ -30,7 +49,7 @@ class IndexLogin extends LitElement {
               <label for="checkbox"></label>
               <p>Recuérdame</p>
             </div>
-            <button type="submit">ENTRAR</button>
+            <button @click=${this.signin}>ENTRAR</button>
           </div>
         </div>
         <div class="social-login">

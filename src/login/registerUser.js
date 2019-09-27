@@ -6,6 +6,11 @@ import '../spinner/spinner-loader';
 
 class RegisterUser extends LitElement {
 
+  static get properties() {
+    return {
+      loading: Boolean,
+    }
+  }
 
   static get styles() {
     return [css_login, register_css];
@@ -13,7 +18,7 @@ class RegisterUser extends LitElement {
 
   constructor() {
     super();
-    this.loading = true;
+    this.loading = false;
   }
 
   register() {
@@ -22,18 +27,21 @@ class RegisterUser extends LitElement {
     const username = this.shadowRoot.querySelector('input[name=username]').value;
     const surname = this.shadowRoot.querySelector('input[name=surname]').value;
     const password = this.shadowRoot.querySelector('input[name=password]').value;
-
-    console.log('email', { email, surname, username, password });
+    const base64Password = btoa(password);
+    // sessionStorage.setItem('user', `Basic ${btoa(`${email}:${password}`)}`);
+    // fetch('url', (result) => {
+    //   if(result.status === 200) {
+    //     sessionStorage.setItem('user', `Basic ${base64.encode(`${email}:${password}`)}`);
+    //     window.location.href = '/';
+    //   }
+    //  TODO: SHOW ERROR
+    // })
   }
   render() {
-    console.log('loadin', this.loading);
     return html`
       <div class="login-container">
         <div class="app-logo">
-          <div>
-            <img src="/src/svgs/logo.svg" alt="Logo">
-            <p>TeAGILE</p>
-          </div>
+          <img src="/src/imgs/TeAgile.png" width="140px" alt="TeAgile Logo">
           <img src="/src/svgs/people-running.svg" width="300px" alt="People running">
         </div>
         <div class="inputs-box">
