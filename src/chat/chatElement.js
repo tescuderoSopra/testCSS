@@ -37,8 +37,22 @@ class ChatElement extends LitElement {
     ];
   }
 
+  static get properties() {
+    return {
+      isBot: {
+        type: Boolean,
+        attribute: 'is-bot',
+      }
+    };
+  }
+
+  constructor() {
+    super();
+    this.isBot = false;
+  }
+
   render() {
-    return html`
+    return !this.isBot ? html`
           <div class="container">
             <div class="date-info">
               <p>Hoy</p>
@@ -69,6 +83,15 @@ class ChatElement extends LitElement {
             <div id="robot">
               <img src="/src/imgs/robot.png" alt="Robot">
             </div>
+          </div>
+        ` : html`
+          <div class="container">
+            <iframe
+              allow="microphone;"
+              width="350"
+              height="650"
+              src="https://console.dialogflow.com/api-client/demo/embedded/aa774f26-f161-4901-a436-23d6eadd970c">
+            </iframe>
           </div>
         `;
   }

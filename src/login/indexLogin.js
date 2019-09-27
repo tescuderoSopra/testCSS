@@ -6,6 +6,7 @@ class IndexLogin extends LitElement {
   static get styles() {
     return css_login;
   }
+
   render() {
     return html`
       <div class="login-container">
