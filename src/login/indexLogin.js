@@ -10,10 +10,7 @@ class IndexLogin extends LitElement {
     return html`
       <div class="login-container">
         <div class="app-logo">
-          <div>
-            <img src="/src/svgs/logo.svg" alt="Logo">
-            <p>TeAGILE</p>
-          </div>
+          <img src="/src/imgs/TeAgile.png" width="140px" alt="TeAgile Logo">
           <img src="/src/svgs/people-running.svg" width="300px" alt="People running">
         </div>
         <div class="inputs-box">
