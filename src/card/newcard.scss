@@ -12,3 +12,24 @@ textarea {
     min-height: 100px;
     width: 100%;
 }
+
+.calendar {
+    --inner-input-focus-background: rgba(241,111,92,1); // seleccionado
+    // --input-focus-background: rgba(255,166,46,1);; // background del input seleccionado
+    // --input-focus-color: rgba(255,166,46,1); // color del input seleccionado
+    --input-background: white;
+    --input-color: grey;
+    --input-picker-background: rgba(241,111,92,1);
+    --input-picker-color: #eeeeee;
+    --input-size: 100px;
+    --input-border-width: 0;
+    --input-padding: 0;
+
+    .containerFlex {
+        div {
+            width: max-content;
+        }
+    }
+    
+
+}
