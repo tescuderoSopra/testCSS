@@ -15,15 +15,8 @@ class NewCard extends LitElement {
     render() {
         return html`
           <div class="containerDetail">
-            <div class="containerFlex">
-                <div>
-                    <p class="greyLetter">Título</p>
-                    <input type="text" class="description" />
-                </div>
-                <div class="containerImg">
-                    <img src="/src/imgs/task.png" alt="tipo de tarea" />
-                </div>
-            </div>
+            <p class="greyLetter">Título</p>
+            <input type="text" class="description" />
             <p class="orangeLine"></p>
             <p class="greyLetter">Descripción</p>
             <textarea class="description"></textarea>
