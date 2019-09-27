@@ -2,13 +2,17 @@ import { LitElement, html, css } from 'lit-element';
 
 import { initRouter } from './router';
 
+import './header/commonHeader';
+
 class AppShell extends LitElement {
   static get styles() {
     return css``;
   }
 
   static get properties() {
-    return {};
+    return {
+      appTitle: { type: String }
+    };
   }
 
   constructor() {
@@ -17,13 +21,7 @@ class AppShell extends LitElement {
 
   render() {
     return html`
-      <header>
-        <nav>
-          <ul>
-            <li><a href="/login">login</a></li>
-          </ul>
-        </nav>
-      </header>
+      <common-heaer></common-heaer>
 
       <main></main>
     `;
